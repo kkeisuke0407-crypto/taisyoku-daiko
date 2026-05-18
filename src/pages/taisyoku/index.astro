@@ -1,0 +1,513 @@
+---
+const CLIENT_NAME = "◎◎";
+const SITE_NAME = "やめる前相談室";
+const PAGE_TITLE = `${SITE_NAME}｜退職代行を使う前に安全性と選び方を確認`;
+const PAGE_DESC =
+  "退職代行を会社が取り合わないケース、非弁リスク、弁護士・労働組合・民間サービスの違いを整理。状況別に相談先を比較します。";
+const SITE_URL = import.meta.env.PUBLIC_TAISYOKU_SITE_URL ?? "https://hakobu-family.com";
+const BASE_PATH = "/taisyoku";
+const CANONICAL = `${SITE_URL}${BASE_PATH}`;
+const OGP_IMAGE = `${SITE_URL}${BASE_PATH}/images/hero-retirement-consultation.png`;
+
+const services = [
+  {
+    name: `${CLIENT_NAME} 弁護士対応プラン`,
+    type: "弁護士",
+    price: "条件確認",
+    fit: "有給・未払い・退職金・損害賠償・公務員など、会社と揉める可能性がある方",
+    point: "交渉や法的トラブルの可能性がある場合に確認したいタイプです。費用だけでなく、対応範囲を優先して見ます。",
+    cta: "このタイプを確認",
+    href: "#sample-contact",
+    tag: "トラブル対応"
+  },
+  {
+    name: `${CLIENT_NAME} 法務相談プラン`,
+    type: "弁護士",
+    price: "条件確認",
+    fit: "退職日、有給、未払い、会社からの請求など、法的な不安を先に整理したい方",
+    point: "退職に付随する法律的な問題を相談したい場合の候補です。申込前に料金と相談範囲を確認します。",
+    cta: "相談範囲を見る",
+    href: "#sample-contact",
+    tag: "法的な不安"
+  },
+  {
+    name: `${CLIENT_NAME} 労組連携プラン`,
+    type: "労組連携",
+    price: "条件確認",
+    fit: "退職意思の伝達に加えて、有給や退職日の調整も気になる方",
+    point: "労働組合としての対応範囲を確認したいタイプです。法的紛争に発展しそうな場合は弁護士対応も検討します。",
+    cta: "対応範囲を見る",
+    href: "#sample-contact",
+    tag: "バランス型"
+  },
+  {
+    name: `${CLIENT_NAME} 費用重視プラン`,
+    type: "民間型",
+    price: "条件確認",
+    fit: "会社へ退職意思を伝えてほしい、費用を抑えてまず相談したい方",
+    point: "伝達中心で足りる場合の候補です。交渉や請求が必要になりそうなら、弁護士・労組型も確認します。",
+    cta: "費用と条件を見る",
+    href: "#sample-contact",
+    tag: "費用・即日"
+  },
+  {
+    name: `${CLIENT_NAME} LINE相談プラン`,
+    type: "民間",
+    price: "条件確認",
+    fit: "電話が苦手で、まずはLINEで状況を伝えたい方",
+    point: "相談の始めやすさを重視するタイプです。相談前に、対応できる範囲と追加費用の有無を確認します。",
+    cta: "相談の流れを見る",
+    href: "#sample-contact",
+    tag: "相談しやすい"
+  }
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "退職代行は弁護士に依頼した方がいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "会社と揉める可能性がある、有給や未払い賃金などの交渉が必要、公務員や自衛隊など退職手続きに注意が必要な場合は、弁護士対応のサービスを優先して確認するのが安全です。単純に退職意思を伝えてほしいだけなら、労働組合連携や民間サービスも候補になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "非弁リスクとは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "弁護士ではない業者が法律事務や交渉に踏み込むと、弁護士法上の問題になる可能性があります。退職日の調整、有給消化、未払い賃金、損害賠償などの交渉が絡む場合は、弁護士対応かどうかを確認してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "安い退職代行を選んでも大丈夫ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "単純な退職連絡だけで済む場合は費用重視でも候補になります。ただし、会社が強く引き止める、有給や未払いの話がある、損害賠償を示唆されているなどの場合は、価格だけで選ばない方が安全です。"
+      }
+    }
+  ]
+};
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESC} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={CANONICAL} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={PAGE_TITLE} />
+  <meta property="og:description" content={PAGE_DESC} />
+  <meta property="og:url" content={CANONICAL} />
+  <meta property="og:image" content={OGP_IMAGE} />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content={SITE_NAME} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/taisyoku/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/taisyoku" aria-label={SITE_NAME}>
+        <span class="brand-mark">h</span>
+        <span>
+          <strong>{SITE_NAME}</strong>
+          <small>退職前の安全比較</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="ページ内ナビゲーション">
+        <a href="#risk">リスク</a>
+        <a href="#legal-check">弁護士目安</a>
+        <a href="#compare">比較</a>
+        <a href="#sample-contact">相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-image" src="/taisyoku/images/hero-retirement-consultation.png" alt="" width="1680" height="944" decoding="async" fetchpriority="high" />
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">退職代行を価格だけで選ぶ前に</p>
+          <h1>{SITE_NAME}</h1>
+          <p class="hero-lead">
+            退職代行は「会社に辞めると伝えるだけ」ならシンプルです。
+            でも、有給・未払い・退職日・損害賠償の話が出そうなら、弁護士でない業者では会社が対応を止めることがあります。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#legal-check">弁護士対応が必要か確認</a>
+            <a class="btn btn-secondary" href="#hiben-visual">非弁リスクを見る</a>
+          </div>
+          <div class="hero-facts" aria-label="主要ポイント">
+            <span>会社対応リスク</span>
+            <span>弁護士・労組・民間</span>
+            <span>LINEで相談しやすい</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alert-band" id="risk">
+      <div class="container alert-grid">
+        <div>
+          <span class="section-kicker">IMPORTANT</span>
+          <h2>「退職できるか」だけでなく「会社が相手にするか」まで見る</h2>
+        </div>
+        <p>
+          東京商工リサーチの2026年4月調査では、弁護士や労働組合以外の退職代行業者からの連絡について、
+          非弁行為の可能性を理由に取り合わないとする企業回答が約3割ありました。出典: 東京商工リサーチ
+        </p>
+      </div>
+    </section>
+
+    <section class="section hiben-section" id="hiben-visual">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">SAFETY GUIDE</span>
+          <h2>非弁リスクは「会社と話し合う必要があるか」で決まる</h2>
+          <p>
+            非弁とは、弁護士ではない人が報酬を得て、法律問題の交渉や請求に踏み込むことです。
+            退職代行では、本人の代わりに「伝える」だけなのか、会社と「条件を話し合う」のかで危険度が変わります。
+          </p>
+        </div>
+
+        <div class="hiben-explainer">
+          <article>
+            <span>OKになりやすい範囲</span>
+            <h3>退職意思の伝達</h3>
+            <p>「本人は退職したいと言っています」と会社へ伝えるだけ。ここで終わるなら、民間型でも候補になります。</p>
+          </article>
+          <article class="warning">
+            <span>注意が必要</span>
+            <h3>退職条件の調整</h3>
+            <p>退職日、有給消化、貸与品、会社からの連絡拒否など、会社と条件を詰める段階です。</p>
+          </article>
+          <article class="danger">
+            <span>弁護士優先</span>
+            <h3>請求・損害賠償・法的トラブル</h3>
+            <p>未払い賃金、退職金、慰謝料、損害賠償、社宅、借金返済などは弁護士対応を先に見ます。</p>
+          </article>
+        </div>
+
+        <div class="risk-dashboard">
+          <div class="donut-card">
+            <div class="donut" aria-label="企業の30.4%が取り合わないと回答">
+              <span>30.4<small>%</small></span>
+            </div>
+            <h3>会社が「この業者とは話せない」と判断する可能性</h3>
+            <p>
+              弁護士・労働組合以外の退職代行からの連絡について、非弁行為の可能性を理由に取り合わない企業回答が30.4%ありました。
+              つまり、安く申し込んでも会社側で止まるリスクがあります。
+            </p>
+            <small>出典: 東京商工リサーチ 2026年4月調査</small>
+          </div>
+
+          <div class="bar-card">
+            <h3>弁護士型は高い。ただし「揉めそうな退職」では保険になる</h3>
+            <p>弁護士法人と民間経営では平均料金に開きがあります。安さだけで選ぶより、自分の退職に交渉が混ざるかを先に見ます。</p>
+            <div class="bar-chart" aria-label="退職代行サービスの料金比較">
+              <div class="bar-row">
+                <span>民間経営</span>
+                <div><i style="width: 50%"></i></div>
+                <strong>約22,500円</strong>
+              </div>
+              <div class="bar-row">
+                <span>全体平均</span>
+                <div><i style="width: 66%"></i></div>
+                <strong>約29,400円</strong>
+              </div>
+              <div class="bar-row bar-row-legal">
+                <span>弁護士法人</span>
+                <div><i style="width: 100%"></i></div>
+                <strong>約44,700円</strong>
+              </div>
+            </div>
+            <small>出典: 帝国データバンク 退職代行サービス動向調査</small>
+          </div>
+        </div>
+
+        <div class="boundary-map" aria-label="退職代行の対応範囲">
+          <div class="boundary-card safe">
+            <span>伝達</span>
+            <h3>退職意思を伝える</h3>
+            <p>「辞めたい」という意思を会社に伝えるだけなら、民間サービスでも対応できる余地があります。</p>
+          </div>
+          <div class="boundary-arrow">→</div>
+          <div class="boundary-card caution">
+            <span>交渉</span>
+            <h3>退職日・有給を調整する</h3>
+            <p>会社と条件を話し合う段階から、労働組合または弁護士の領域を確認します。</p>
+          </div>
+          <div class="boundary-arrow">→</div>
+          <div class="boundary-card legal">
+            <span>法律問題</span>
+            <h3>未払い・慰謝料を請求する</h3>
+            <p>残業代、退職金、損害賠償などの請求は弁護士対応を優先して確認します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="section-copy">
+          <span class="section-kicker">CHECKPOINT</span>
+          <h2>「安い退職代行」ではなく「失敗しない選び方」で入る</h2>
+          <p>
+            格安サービスは増えています。価格だけで選ぶと、より安いサービスに目が行きやすい一方で、対応範囲を見落とすことがあります。
+            {SITE_NAME}では、退職代行を「民間」「労働組合連携」「弁護士対応」に分けて、
+            会社と揉めそうな方、費用を抑えたい方、まずLINEで相談したい方が迷わないように整理します。
+          </p>
+        </div>
+        <div class="metric-row" aria-label="相談先を選ぶ目安">
+          <div>
+            <strong>1</strong>
+            <span>会社と揉めそうなら、弁護士対応を先に確認</span>
+          </div>
+          <div>
+            <strong>2</strong>
+            <span>伝達だけで足りるなら、費用と相談しやすさも比較</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>迷う場合は、交渉の可能性があるかで判断</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section scenario-section">
+      <div class="container scenario-layout">
+        <div>
+          <span class="section-kicker">WHAT HAPPENS</span>
+          <h2>非弁リスクで止まると、結局あなたに戻ってくる</h2>
+          <p>
+            会社が「弁護士でない業者とは交渉できない」と判断すると、退職日・有給・貸与品返却・未払いの話が止まり、
+            本人がもう一度会社と向き合うことになりかねません。
+          </p>
+          <p class="source-note">出典: 愛媛県労働委員会資料、東京弁護士会の注意喚起を参考に整理</p>
+        </div>
+        <div class="timeline">
+          <div><span>1</span><strong>安さで退職代行を選ぶ</strong><p>「辞めると伝えるだけ」のつもりで申し込む。</p></div>
+          <div><span>2</span><strong>会社が条件の話を出す</strong><p>退職日、有給、未払い、貸与品、損害賠償などの話になる。</p></div>
+          <div><span>3</span><strong>会社が対応を保留する</strong><p>「交渉は弁護士でないとできない」として止まる可能性。</p></div>
+          <div><span>4</span><strong>不安な状態が続く</strong><p>揉めそうなら、最初から弁護士対応を確認した方が早い。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section legal-check-section" id="legal-check">
+      <div class="container legal-check">
+        <div>
+          <span class="section-kicker">LEGAL CHECK</span>
+          <h2>1つでも当てはまるなら、弁護士対応を先に確認</h2>
+          <p>
+            「自分は大丈夫」と思っていても、会社側が何を言ってくるかは連絡してみないと分かりません。
+            下の項目に当てはまるなら、安さよりも対応範囲を優先してください。
+          </p>
+        </div>
+        <div class="legal-signs">
+          <div><strong>有給を使いたい</strong><span>会社が拒否しそう、退職日を調整したい</span></div>
+          <div><strong>未払い・退職金がある</strong><span>残業代、給与、退職金、立替金を請求したい</span></div>
+          <div><strong>損害賠償と言われた</strong><span>辞めたら損害が出る、訴えると言われている</span></div>
+          <div><strong>公務員・自衛隊・社宅</strong><span>退職手続きや退去、貸与品で揉めそう</span></div>
+          <div><strong>会社から借金がある</strong><span>返済、給与相殺、書類の扱いが不安</span></div>
+          <div><strong>強い引き止めがある</strong><span>退職届を受け取らない、上司と話したくない</span></div>
+        </div>
+        <div class="legal-cta">
+          <p>迷ったら、まず弁護士対応を見てから費用重視プランと比較する順番が安全です。</p>
+          <a class="btn btn-primary" href="#compare">弁護士対応の候補を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section type-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">TYPE CHECK</span>
+          <h2>3タイプの違いを、対応範囲で見る</h2>
+          <p>料金の安さだけでなく、「誰が何をできるか」を先に確認します。</p>
+        </div>
+        <div class="type-matrix">
+          <div class="matrix-head">確認項目</div>
+          <div class="matrix-head">民間</div>
+          <div class="matrix-head">労働組合</div>
+          <div class="matrix-head">弁護士</div>
+          <div>退職意思の伝達</div><div class="ok">対応候補</div><div class="ok">対応候補</div><div class="ok">対応候補</div>
+          <div>有給・退職日の交渉</div><div class="ng">要注意</div><div class="mid">確認が必要</div><div class="ok">相談候補</div>
+          <div>未払い賃金・退職金請求</div><div class="ng">要注意</div><div class="mid">確認が必要</div><div class="ok">相談候補</div>
+          <div>損害賠償・慰謝料</div><div class="ng">要注意</div><div class="ng">弁護士優先</div><div class="ok">相談候補</div>
+          <div>料金感</div><div class="ok">低め</div><div class="mid">中間</div><div class="ng">高め</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section route-section" id="route">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">YOUR TYPE</span>
+          <h2>迷ったら「弁護士対応」から見て、不要なら下げる</h2>
+          <p>退職代行は、安い順ではなくリスクが高い順に見ると失敗しにくくなります。</p>
+        </div>
+        <div class="route-grid">
+          <article class="route-card route-legal">
+            <span>会社と揉めそう</span>
+            <h3>弁護士対応を優先</h3>
+            <p>有給、未払い、退職金、損害賠償、公務員、自衛隊、社宅、借金返済など交渉の可能性がある人。</p>
+            <a href="#compare">弁護士対応の比較へ</a>
+          </article>
+          <article class="route-card route-union">
+            <span>条件調整もありそう</span>
+            <h3>労組連携も候補</h3>
+            <p>有給や退職日の調整が気になるが、請求や損害賠償までは想定していない方。</p>
+            <a href="#compare">労組連携の比較へ</a>
+          </article>
+          <article class="route-card route-price">
+            <span>費用を抑えたい</span>
+            <h3>安さ・即日・LINE完結</h3>
+            <p>価格を見て比較している方。料金・返金条件・対応範囲を確認してから選びます。</p>
+            <a href="#compare">費用重視の比較へ</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compare-section" id="compare">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">COMPARE</span>
+          <h2>まず確認したい相談先</h2>
+          <p>有給・未払い・損害賠償・強い引き止めがあるなら、弁護士対応を先に確認。問題がシンプルなら、労組連携や費用重視も比較します。</p>
+        </div>
+        <div class="offer-list">
+          {services.map((service) => (
+            <article class="offer-card" id={service.href.replace("#", "")}>
+              <div class="offer-main">
+                <span class="offer-tag">{service.tag}</span>
+                <h3>{service.name}</h3>
+                <p>{service.fit}</p>
+              </div>
+              <dl class="offer-data">
+                <div>
+                  <dt>種別</dt>
+                  <dd>{service.type}</dd>
+                </div>
+                <div>
+                  <dt>料金</dt>
+                  <dd>{service.price}</dd>
+                </div>
+              </dl>
+              <p class="offer-note">{service.point}</p>
+              <a class="btn btn-outline" href={service.href} data-offer={service.name}>{service.cta}</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section guide-section" id="guide">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">HOW TO CHECK</span>
+          <h2>申し込む前に見るのは、この4つだけ</h2>
+          <p>比較で迷ったら、細かい口コミよりも「自分の退職で止まらないか」を優先します。</p>
+        </div>
+        <div class="guide-grid">
+          <article>
+            <h3>退職意思の伝達だけで足りるか</h3>
+            <p>会社へ辞める意思を伝えてほしいだけなら、民間サービスや労組連携サービスも候補になります。</p>
+          </article>
+          <article>
+            <h3>交渉が必要になりそうか</h3>
+            <p>有給、未払い賃金、退職金、損害賠償、退職日の調整などが絡む場合は弁護士対応を優先して確認します。</p>
+          </article>
+          <article>
+            <h3>料金と返金条件は明確か</h3>
+            <p>追加料金、キャンセル、返金保証、支払い方法、相談後の流れを公式情報で確認します。</p>
+          </article>
+          <article>
+            <h3>連絡後のサポートはあるか</h3>
+            <p>退職届、貸与品返却、会社からの連絡対応、転職相談など、退職後の不安も確認します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof-section">
+      <div class="container proof-layout">
+        <div>
+          <span class="section-kicker">COMPLIANCE</span>
+          <h2>安いサービスを選んでもよいケース</h2>
+          <p>
+            すべての人に弁護士が必要とは限りません。ただし、下の条件に近いときだけ費用重視で比較します。
+          </p>
+        </div>
+        <ul class="check-list">
+          <li>会社と揉めておらず、退職意思を伝えてほしいだけ</li>
+          <li>有給・未払い・退職金・損害賠償の話がない</li>
+          <li>会社から借金、社宅、貸与品などの不安が少ない</li>
+          <li>追加費用、返金条件、対応範囲を確認できる</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="sample-contact">
+      <div class="container contact-layout">
+        <div>
+          <span class="section-kicker">CHECK FLOW</span>
+          <h2>相談前に、あなたの状況を整理する</h2>
+          <p>
+            現在は相談前チェックとして掲載しています。会社と揉めそうか、交渉が必要か、費用を優先したいかを整理しておくと選びやすくなります。
+            このページでは個人情報の入力フォームは設置していません。
+          </p>
+        </div>
+        <div class="sample-flow">
+          <div><span>1</span><strong>状況を選ぶ</strong><p>弁護士対応・労組連携・費用重視から近いものを確認。</p></div>
+          <div><span>2</span><strong>公式条件を確認</strong><p>料金、対応範囲、返金条件、相談方法を確認。</p></div>
+          <div><span>3</span><strong>必要なら公式条件へ</strong><p>料金・対応範囲・相談方法を確認してから進みます。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-inner">
+        <span class="section-kicker">NEXT STEP</span>
+        <h2>まずは「安さ」ではなく、あなたの退職状況から選ぶ</h2>
+        <p>
+          有給、未払い、退職日、損害賠償などの不安があるなら、対応範囲を先に確認しましょう。
+          シンプルな退職連絡だけで足りるなら、費用や相談しやすさも比較できます。
+        </p>
+        <a class="btn btn-primary" href="#compare">弁護士対応の候補を見る</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>{SITE_NAME}</p>
+      <nav>
+        <a href="/taisyoku">トップ</a>
+        <a href="/taisyoku/privacy">プライバシーポリシー</a>
+        <a href="/taisyoku/disclosure">広告掲載について</a>
+        <a href="/taisyoku/operator">運営者情報</a>
+      </nav>
+    </div>
+    <div class="container footer-note">
+      <p>掲載内容は一般的な比較情報です。各サービスの最新条件は公式サイトで確認してください。PRを含む場合があります。</p>
+    </div>
+  </footer>
+</body>
+</html>

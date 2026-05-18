@@ -1,0 +1,84 @@
+---
+const CLIENT_NAME = "◎◎";
+const SITE_NAME = "やめる前相談室";
+const PAGE_TITLE = `広告掲載について｜${SITE_NAME}`;
+const PAGE_DESC = `${SITE_NAME}の広告掲載方針です。PR表記、サンプル掲載、アフィリエイトリンク、比較情報の扱いについて記載しています。`;
+const SITE_URL = import.meta.env.PUBLIC_TAISYOKU_SITE_URL ?? "https://hakobu-family.com";
+const BASE_PATH = "/taisyoku";
+const CANONICAL = `${SITE_URL}${BASE_PATH}/disclosure`;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESC} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={CANONICAL} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/taisyoku/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/taisyoku" aria-label={SITE_NAME}>
+        <span class="brand-mark">h</span>
+        <span><strong>{SITE_NAME}</strong><small>退職前の安全比較</small></span>
+      </a>
+      <nav class="nav" aria-label="関連ページ">
+        <a href="/taisyoku">トップ</a>
+        <a href="/taisyoku/privacy">プライバシーポリシー</a>
+        <a href="/taisyoku/operator">運営者情報</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="policy-page">
+    <section class="policy-hero">
+      <div class="container">
+        <span class="section-kicker">ADVERTISEMENT POLICY</span>
+        <h1>広告掲載について</h1>
+        <p>{SITE_NAME}の広告掲載方針と比較情報の扱いについて記載します。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container policy-body">
+        <h2>広告・アフィリエイトリンクについて</h2>
+        <p>当サイトには広告・アフィリエイトリンクが含まれる場合があります。ユーザーが当サイト内のリンクから外部サービス公式サイトへ移動し、相談や申込等を行った場合、当サイトが紹介料を受け取ることがあります。</p>
+
+        <h2>サンプル掲載について</h2>
+        <p>現在、当サイトの比較枠・CTA・サービス名には、準備中の比較枠としてクライアント名を「{CLIENT_NAME}」とした表記が含まれます。掲載内容は、公式情報や広告条件を確認したうえで更新します。</p>
+
+        <h2>PR表記について</h2>
+        <p>広告リンクを含む掲載サービスには、サービス名の近くに「PR」または広告であることが分かる表記を行います。ユーザーが広告掲載であることを認識できるよう、比較一覧やCTA周辺で明示します。</p>
+
+        <h2>掲載順位について</h2>
+        <p>掲載順位や紹介内容は、広告条件、サービス種別、対応範囲、料金、相談しやすさ、公式情報の確認しやすさ、ユーザーの状況との相性等をもとに編集しています。広告掲載の有無や条件が掲載順位に影響する場合があります。</p>
+
+        <h2>比較情報について</h2>
+        <p>当サイトでは、各社の公式サイトや公開情報をもとに、弁護士対応、労働組合連携、民間サービス、料金、返金条件、相談方法、対応範囲等の確認ポイントを紹介します。ただし、条件は変更される場合があります。</p>
+
+        <h2>表現方針について</h2>
+        <p>当サイトでは、「必ず退職できる」「最安」「100%成功」など、根拠のない断定表現を避ける方針です。また、弁護士ではないサービスについて、法律交渉が可能であるかのような表現は行いません。</p>
+
+        <p class="policy-date">制定日: 2026年5月18日</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>{SITE_NAME}</p>
+      <nav>
+        <a href="/taisyoku">トップ</a>
+        <a href="/taisyoku/privacy">プライバシーポリシー</a>
+        <a href="/taisyoku/operator">運営者情報</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

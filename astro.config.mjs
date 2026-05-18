@@ -1,0 +1,13 @@
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+
+const SITE = process.env.PUBLIC_SITE_URL ?? "https://hakobu-family.com";
+
+export default defineConfig({
+  site: SITE,
+  trailingSlash: "never",
+  build: {
+    format: "directory"
+  },
+  integrations: [sitemap()]
+});

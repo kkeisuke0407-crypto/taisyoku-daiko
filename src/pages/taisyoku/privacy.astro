@@ -1,0 +1,87 @@
+---
+const CLIENT_NAME = "◎◎";
+const SITE_NAME = "やめる前相談室";
+const PAGE_TITLE = `プライバシーポリシー｜${SITE_NAME}`;
+const PAGE_DESC = `${SITE_NAME}のプライバシーポリシーです。アクセス解析、広告リンク、外部サイトへの遷移、個人情報の取り扱いについて記載しています。`;
+const SITE_URL = import.meta.env.PUBLIC_TAISYOKU_SITE_URL ?? "https://hakobu-family.com";
+const BASE_PATH = "/taisyoku";
+const CANONICAL = `${SITE_URL}${BASE_PATH}/privacy`;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESC} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={CANONICAL} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/taisyoku/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/taisyoku" aria-label={SITE_NAME}>
+        <span class="brand-mark">h</span>
+        <span><strong>{SITE_NAME}</strong><small>退職前の安全比較</small></span>
+      </a>
+      <nav class="nav" aria-label="関連ページ">
+        <a href="/taisyoku">トップ</a>
+        <a href="/taisyoku/disclosure">広告掲載について</a>
+        <a href="/taisyoku/operator">運営者情報</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="policy-page">
+    <section class="policy-hero">
+      <div class="container">
+        <span class="section-kicker">PRIVACY POLICY</span>
+        <h1>プライバシーポリシー</h1>
+        <p>{SITE_NAME}における情報の取り扱いについて記載します。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container policy-body">
+        <h2>当サイトについて</h2>
+        <p>{SITE_NAME}は、退職代行サービスの選び方、弁護士・労働組合・民間サービスの違い、退職時に確認したい注意点を紹介する情報サイトです。掲載サービス名は、準備中の比較枠としてクライアント名を「{CLIENT_NAME}」とした表記を含みます。</p>
+
+        <h2>個人情報の取得について</h2>
+        <p>当サイト上では、氏名、住所、電話番号、メールアドレスなどの個人情報を直接取得する入力フォームを設置していません。外部サービスへ遷移する場合、相談申込や問い合わせはリンク先の公式サイトで行われます。</p>
+
+        <h2>アクセス解析について</h2>
+        <p>当サイトでは、サイト改善や広告効果の確認のため、Google Analytics などのアクセス解析ツールを利用する場合があります。これらのツールは Cookie 等を使用して匿名の利用状況を収集することがありますが、個人を特定するものではありません。</p>
+
+        <h2>広告リンクについて</h2>
+        <p>当サイトには広告・アフィリエイトリンクが含まれる場合があります。リンクをクリックした後は、遷移先サイトのプライバシーポリシーおよび利用規約が適用されます。遷移先で入力された情報について、当サイトは取得・管理しません。</p>
+
+        <h2>Cookie について</h2>
+        <p>当サイトまたは広告配信・アクセス解析事業者は、Cookie を利用する場合があります。ブラウザの設定により Cookie を無効にできますが、一部機能が正しく動作しない場合があります。</p>
+
+        <h2>免責事項</h2>
+        <p>当サイトでは、できる限り正確な情報を掲載するよう努めますが、サービス内容、料金、対応範囲、キャンペーン、広告条件等は変更される場合があります。正式申込前に必ず各公式サイトで最新条件をご確認ください。</p>
+
+        <h2>改定について</h2>
+        <p>本ポリシーは、必要に応じて予告なく変更する場合があります。変更後の内容は、本ページに掲載した時点で有効となります。</p>
+
+        <p class="policy-date">制定日: 2026年5月18日</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>{SITE_NAME}</p>
+      <nav>
+        <a href="/taisyoku">トップ</a>
+        <a href="/taisyoku/disclosure">広告掲載について</a>
+        <a href="/taisyoku/operator">運営者情報</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

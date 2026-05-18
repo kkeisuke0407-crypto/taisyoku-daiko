@@ -1,0 +1,47 @@
+---
+const SITE_NAME = "やめる前相談室";
+const PAGE_TITLE = `退職代行後に会社から連絡が来たら｜${SITE_NAME}`;
+const PAGE_DESC = "退職代行を使った後に会社から本人や家族へ連絡が来た場合の考え方と、事前に確認したいことを整理します。";
+const SITE_URL = import.meta.env.PUBLIC_TAISYOKU_SITE_URL ?? "https://taisyoku.hakobu-family.com";
+const BASE_PATH = "/taisyoku";
+const CANONICAL = `${SITE_URL}${BASE_PATH}/columns/company-contact`;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESC} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={CANONICAL} />
+  <link rel="stylesheet" href="/taisyoku/styles.css" />
+</head>
+<body>
+  <main class="article-page">
+    <article class="container article-body">
+      <a class="back-link" href="/taisyoku/columns">退職前コラムへ戻る</a>
+      <span class="section-kicker">COLUMN</span>
+      <h1>退職代行後に会社から連絡が来たらどう考える？</h1>
+      <p class="article-lead">退職代行を使っても、会社から本人や緊急連絡先に連絡が来る可能性はあります。慌てないために、事前に対応範囲を確認しておきましょう。</p>
+
+      <h2>会社から連絡が来やすい内容</h2>
+      <ul>
+        <li>退職届や必要書類の確認</li>
+        <li>健康保険証、社員証、PCなど貸与品の返却</li>
+        <li>給与、交通費、立替金の精算</li>
+        <li>業務引き継ぎに関する質問</li>
+        <li>退職日や有給消化の確認</li>
+      </ul>
+
+      <h2>本人が対応したくない場合</h2>
+      <p>退職代行サービスによって、会社からの連絡をどこまで受け止めてくれるかは異なります。単なる伝達なら対応できても、会社との条件調整や法的な争いになると、対応範囲が変わることがあります。</p>
+
+      <h2>申し込む前に聞くこと</h2>
+      <p>会社から本人に連絡が来た場合の流れ、家族への連絡を止められるか、書類や貸与品の返却方法、会社が交渉を求めてきた場合の対応を確認しておくと、申し込み後の不安が減ります。</p>
+
+      <a class="btn btn-primary" href="/taisyoku#legal-check">トラブルの可能性を確認する</a>
+    </article>
+  </main>
+</body>
+</html>

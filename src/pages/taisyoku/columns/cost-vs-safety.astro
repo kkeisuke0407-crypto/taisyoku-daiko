@@ -1,0 +1,51 @@
+---
+const SITE_NAME = "やめる前相談室";
+const PAGE_TITLE = `安い退職代行を選ぶ前に見るべき対応範囲｜${SITE_NAME}`;
+const PAGE_DESC = "退職代行を料金だけで選ぶ前に確認したい、民間型、労組連携型、弁護士対応型の違いを整理します。";
+const SITE_URL = import.meta.env.PUBLIC_TAISYOKU_SITE_URL ?? "https://taisyoku.hakobu-family.com";
+const BASE_PATH = "/taisyoku";
+const CANONICAL = `${SITE_URL}${BASE_PATH}/columns/cost-vs-safety`;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESC} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={CANONICAL} />
+  <link rel="stylesheet" href="/taisyoku/styles.css" />
+</head>
+<body>
+  <main class="article-page">
+    <article class="container article-body">
+      <a class="back-link" href="/taisyoku/columns">退職前コラムへ戻る</a>
+      <span class="section-kicker">COLUMN</span>
+      <h1>安い退職代行を選ぶ前に見るべき対応範囲</h1>
+      <p class="article-lead">退職代行は料金差が大きいサービスです。ただし、安いかどうかより先に、自分の退職で会社と揉めそうかを確認しましょう。</p>
+
+      <h2>費用重視で選びやすいケース</h2>
+      <ul>
+        <li>会社と揉めていない</li>
+        <li>退職意思を伝えてほしいだけ</li>
+        <li>有給、未払い、退職金、損害賠償の話がない</li>
+        <li>貸与品や書類の返却で大きな不安がない</li>
+      </ul>
+
+      <h2>弁護士対応を先に見たいケース</h2>
+      <ul>
+        <li>有給消化や退職日で揉めそう</li>
+        <li>未払い賃金や退職金を請求したい</li>
+        <li>損害賠償、懲戒、社宅、会社への借金が絡んでいる</li>
+        <li>会社から強い引き止めや脅しに近い発言がある</li>
+      </ul>
+
+      <h2>比較の順番</h2>
+      <p>まずリスクの有無を確認し、揉めそうなら弁護士対応、調整が必要なら労組連携、伝達だけで足りるなら費用重視という順番で見ると、料金だけで迷いにくくなります。</p>
+
+      <a class="btn btn-primary" href="/taisyoku#legal-check">弁護士対応が必要か確認</a>
+    </article>
+  </main>
+</body>
+</html>

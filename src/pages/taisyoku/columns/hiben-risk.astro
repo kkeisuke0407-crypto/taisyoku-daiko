@@ -1,0 +1,48 @@
+---
+const SITE_NAME = "やめる前相談室";
+const PAGE_TITLE = `退職代行の非弁リスクとは？｜${SITE_NAME}`;
+const PAGE_DESC = "退職代行を使う前に知っておきたい非弁リスクを、退職意思の伝達と会社との交渉の違いから整理します。";
+const SITE_URL = import.meta.env.PUBLIC_TAISYOKU_SITE_URL ?? "https://taisyoku.hakobu-family.com";
+const BASE_PATH = "/taisyoku";
+const CANONICAL = `${SITE_URL}${BASE_PATH}/columns/hiben-risk`;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESC} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={CANONICAL} />
+  <link rel="stylesheet" href="/taisyoku/styles.css" />
+</head>
+<body>
+  <main class="article-page">
+    <article class="container article-body">
+      <a class="back-link" href="/taisyoku/columns">退職前コラムへ戻る</a>
+      <span class="section-kicker">COLUMN</span>
+      <h1>退職代行の非弁リスクとは？会社が対応を止めるケース</h1>
+      <p class="article-lead">非弁リスクは、退職代行が「辞めたい意思を伝えるだけ」なのか、「会社と条件を話し合う」のかで大きく変わります。</p>
+
+      <h2>非弁リスクとは</h2>
+      <p>一般に非弁行為とは、弁護士ではない者が報酬を得る目的で、法律事件に関する法律事務を扱うことが問題になる行為です。退職代行では、退職意思の伝達を超えて、退職日、有給消化、未払い賃金、退職金、損害賠償などの話し合いに踏み込む場面で注意が必要です。</p>
+
+      <h2>会社が対応を止めやすい場面</h2>
+      <ul>
+        <li>会社が「有給は認めない」と言っている</li>
+        <li>退職日を会社と調整する必要がある</li>
+        <li>未払い賃金や退職金の請求をしたい</li>
+        <li>損害賠償や懲戒処分を示唆されている</li>
+        <li>社宅、貸与品、会社への借金が絡んでいる</li>
+      </ul>
+
+      <h2>迷ったら弁護士対応から見る</h2>
+      <p>退職の意思を伝えるだけで終わるなら、民間型や労組連携型も候補になります。ただ、会社と揉めそうな材料がある場合は、最初から弁護士対応を確認した方が、結果的に遠回りになりにくいです。</p>
+
+      <p class="article-source">参考: 東京弁護士会の退職代行に関する注意喚起、法務省の弁護士法第72条関連資料</p>
+      <a class="btn btn-primary" href="/taisyoku#legal-check">弁護士対応が必要か確認</a>
+    </article>
+  </main>
+</body>
+</html>

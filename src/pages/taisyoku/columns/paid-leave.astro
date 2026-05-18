@@ -1,0 +1,48 @@
+---
+const SITE_NAME = "やめる前相談室";
+const PAGE_TITLE = `退職前に有給消化したいとき｜${SITE_NAME}`;
+const PAGE_DESC = "退職前に有給消化したい場合に、退職代行を使う前に確認したいポイントを整理します。";
+const SITE_URL = import.meta.env.PUBLIC_TAISYOKU_SITE_URL ?? "https://taisyoku.hakobu-family.com";
+const BASE_PATH = "/taisyoku";
+const CANONICAL = `${SITE_URL}${BASE_PATH}/columns/paid-leave`;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESC} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={CANONICAL} />
+  <link rel="stylesheet" href="/taisyoku/styles.css" />
+</head>
+<body>
+  <main class="article-page">
+    <article class="container article-body">
+      <a class="back-link" href="/taisyoku/columns">退職前コラムへ戻る</a>
+      <span class="section-kicker">COLUMN</span>
+      <h1>退職前に有給消化したいとき、先に確認すること</h1>
+      <p class="article-lead">退職前の有給消化は、会社との調整が発生しやすいポイントです。退職代行を使う前に、残日数と退職希望日を整理しておきましょう。</p>
+
+      <h2>まず確認したいこと</h2>
+      <ul>
+        <li>有給の残日数</li>
+        <li>退職希望日</li>
+        <li>最終出社日をいつにしたいか</li>
+        <li>会社が有給消化を拒否しそうか</li>
+        <li>引き継ぎや貸与品返却の予定</li>
+      </ul>
+
+      <h2>揉めそうなら弁護士対応を検討</h2>
+      <p>有給を使いたいだけならシンプルに見えますが、会社が拒否する、退職日をずらすよう求める、欠勤扱いにすると言うなど、条件の話し合いになることがあります。こうした場合は、退職意思の伝達だけで済まない可能性があります。</p>
+
+      <h2>費用だけで決めない</h2>
+      <p>有給消化が絡む場合、安い退職代行を選ぶ前に「有給の希望をどこまで伝えられるか」「会社が拒否したときにどう対応するか」を確認しておくと安心です。</p>
+
+      <p class="article-source">参考: 厚生労働省「確かめよう労働条件」年次有給休暇関連情報、大阪労働局の年次有給休暇に関する案内</p>
+      <a class="btn btn-primary" href="/taisyoku#compare">相談先タイプを比較する</a>
+    </article>
+  </main>
+</body>
+</html>

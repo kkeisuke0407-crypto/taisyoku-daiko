@@ -1,0 +1,47 @@
+---
+const SITE_NAME = "やめる前相談室";
+const PAGE_TITLE = `退職届・貸与品・書類の準備｜${SITE_NAME}`;
+const PAGE_DESC = "退職代行を使う前に、退職届、貸与品、保険証、会社書類などをどう整理しておくかをまとめます。";
+const SITE_URL = import.meta.env.PUBLIC_TAISYOKU_SITE_URL ?? "https://taisyoku.hakobu-family.com";
+const BASE_PATH = "/taisyoku";
+const CANONICAL = `${SITE_URL}${BASE_PATH}/columns/retirement-letter`;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESC} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={CANONICAL} />
+  <link rel="stylesheet" href="/taisyoku/styles.css" />
+</head>
+<body>
+  <main class="article-page">
+    <article class="container article-body">
+      <a class="back-link" href="/taisyoku/columns">退職前コラムへ戻る</a>
+      <span class="section-kicker">COLUMN</span>
+      <h1>退職届・貸与品・書類はどう準備する？</h1>
+      <p class="article-lead">退職代行を使う場合でも、退職届や会社への返却物を整理しておくと手続きが進みやすくなります。</p>
+
+      <h2>整理しておきたいもの</h2>
+      <ul>
+        <li>退職届または退職願を出す必要があるか</li>
+        <li>健康保険証、社員証、制服、鍵、PC、スマホなどの貸与品</li>
+        <li>源泉徴収票、離職票、雇用保険被保険者証など退職後に必要な書類</li>
+        <li>会社に置いている私物</li>
+        <li>社宅や寮を利用している場合の退去予定</li>
+      </ul>
+
+      <h2>郵送で済むもの、調整が必要なもの</h2>
+      <p>貸与品の返却や書類の受け取りは郵送で進められることもあります。ただし、社宅、会社の借入、未払い精算、損害賠償の話がある場合は、単なる返却手続きでは済まない可能性があります。</p>
+
+      <h2>退職代行に聞いておくこと</h2>
+      <p>退職届の提出方法、貸与品返却の伝え方、会社から書類が届かない場合の対応範囲を確認しましょう。会社と条件の話し合いが必要になりそうなら、弁護士対応も候補に入ります。</p>
+
+      <a class="btn btn-primary" href="/taisyoku#compare">相談先タイプを比較する</a>
+    </article>
+  </main>
+</body>
+</html>
